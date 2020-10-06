@@ -15,13 +15,13 @@ class User:
 
     @classmethod
     def get_by_email(cls, email):
-        data = Database.find("users", {"email": email})
+        data = Database.find_one("users", {"email": email})
         if data is not None:
             return cls(**data)
 
     @classmethod
     def get_by_id(cls, _id):
-        data = Database.find("users", {"_id": _id})
+        data = Database.find_one("users", {"_id": _id})
         if data is not None:
             return cls(**data)
 
