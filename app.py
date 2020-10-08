@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, session
 
-from src.common.database import Database
-from src.models.blog import Blog
-from src.models.user import User
+from common.database import Database
+from models.blog import Blog
+from models.user import User
 
 app = Flask(__name__)
 app.secret_key = "victor"
@@ -60,7 +60,7 @@ def user_blogs(user_id=None):
         user = User.get_by_email(session['email'])
 
     blogs = user.get_blogs()
-
+    print(blogs)
     return render_template("user_blogs.html", blogs=blogs, email=user.email)
 
 

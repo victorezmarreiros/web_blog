@@ -1,8 +1,8 @@
 import uuid
 import datetime
 
-from src.common.database import Database
-from src.models.post import Post
+from common.database import Database
+from models.post import Post
 
 
 class Blog:
@@ -19,7 +19,6 @@ class Blog:
                     content=content,
                     author=self.author,
                     created_date=date)
-
         post.save_to_mongo()
 
     def get_posts(self):
@@ -48,6 +47,10 @@ class Blog:
     @classmethod
     def find_by_author_id(cls, author_id):
         blogs = Database.find(collection="blogs",
-                              query={'author': author_id})
+                              query={"author_id": author_id})
+
+        print(author_id)
+        print(blogs)
+        print([cls(**blog) for blog in blogs])
 
         return [cls(**blog) for blog in blogs]  # list_comprehention -> returns blog(Object) that need to be **unpacking
