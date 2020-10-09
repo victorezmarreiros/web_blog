@@ -1,0 +1,10 @@
+## https://www.mongodb.com/basics/create-database
+
+
+create web_blog
+
+db.users.insert({"_id": "cb66a2f7c0684cedbea4f390f2faf14a", "email": "novouser@test.com", "password": "1234"})
+
+db.blogs.insert({_id: 'cb66a2f7c0684cedbea4f390f2faf18f', author: 'Author Test', author_id: 66a2f7c0684cedbea4f390f2faf14a', title: 'Simple title', description: 'A simple description for a simple blog.'}, {_id: 'cb66a2f7c0684cedbea4f390f2faf15b', author: 'Author Test', author_id: 'cb66a2f7c0684cedbea4f390f2faf14a', title: 'More simple Title', description: 'A simple description for a New Blog'})
+
+db.posts.insert({""})
