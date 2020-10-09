@@ -5,7 +5,7 @@ from models.blog import Blog
 from models.user import User
 
 app = Flask(__name__)
-app.secret_key = "victor"
+app.secret_key = "abacaxi"
 
 
 @app.route('/')

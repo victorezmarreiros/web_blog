@@ -1,10 +1,11 @@
 ## https://www.mongodb.com/basics/create-database
 
 
-create web_blog
+use web_blog
 
+## We could create user by using endpoint {{url}}/register
 db.users.insert({"_id": "cb66a2f7c0684cedbea4f390f2faf14a", "email": "novouser@test.com", "password": "1234"})
 
-db.blogs.insert({_id: 'cb66a2f7c0684cedbea4f390f2faf18f', author: 'Author Test', author_id: 66a2f7c0684cedbea4f390f2faf14a', title: 'Simple title', description: 'A simple description for a simple blog.'}, {_id: 'cb66a2f7c0684cedbea4f390f2faf15b', author: 'Author Test', author_id: 'cb66a2f7c0684cedbea4f390f2faf14a', title: 'More simple Title', description: 'A simple description for a New Blog'})
+db.blogs.insertMany({"_id": "cb66a2f7c0684cedbea4f390f2faf18f", "author": "Author Test", "author_id": "66a2f7c0684cedbea4f390f2faf14a", "title": "Simple title", "description": "A simple description for a simple blog."}, {_id: 'cb66a2f7c0684cedbea4f390f2faf15b', author: 'Author Test', author_id: 'cb66a2f7c0684cedbea4f390f2faf14a', title: 'More simple Title', description: 'A simple description for a New Blog'})
 
-db.posts.insert({""})
+db.posts.insertMany({"blog_id": "cb66a2f7c0684cedbea4f390f2faf18f", "title": "Test Title Post", "content": "Content of random post of random blog", "author": "Author Test", "created_date": ISODate("2020-10-08T00:00:00.000Z")}, {"blog_id": "cb66a2f7c0684cedbea4f390f2faf18f", "title": "Another Title Post", "content": "Another Content of random post of random blog", "author": "Author Test", "created_date": ISODate("2020-10-09T00:00:00.000Z")})
