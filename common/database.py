@@ -8,7 +8,7 @@ class Database:
     @staticmethod
     def connect():
         client = pymongo.MongoClient(Database.URI)
-        Database.DATABASE = client["web-blog"]
+        Database.DATABASE = client["database_blog"]
 
     @staticmethod
     def insert(collection, data):
